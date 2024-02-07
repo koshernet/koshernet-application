@@ -5,7 +5,7 @@ BLOCK_INTERNET='''powershell -Command "Start-Process cmd -Verb RunAs -ArgumentLi
 ALLOW_INTERNET='''powershell -Command "Start-Process cmd -Verb RunAs -ArgumentList '/c netsh advfirewall set allprofiles firewallpolicy blockinbound,allowoutbound'"'''
 BLOCK_INTERNET_ALLOW_CHROME='''powershell -Command "Start-Process cmd -Verb RunAs -ArgumentList '/c netsh advfirewall reset & netsh advfirewall set allprofiles firewallpolicy blockinbound,blockoutbound & netsh advfirewall firewall add rule name=\"chrome1\" program=\"C:\Program Files\Google\Chrome\Application\chrome.exe\" dir=out action=allow & netsh advfirewall firewall add rule name=\"chrome2\" program=\"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe\" dir=out action=allow'"'''
 RESTRICT_CHROME='''regedit URLBlocklist.reg'''
-UNRESTRICT_CHROME='''regedit Cancel_URLBlocklist.reg'''
+UNRESTRICT_CHROME='''regedit Cancel_URLBlocklist.reg & powershell -Command "Start-Process cmd -Verb RunAs -ArgumentList '/c netsh advfirewall set allprofiles firewallpolicy blockinbound,blockoutbound & netsh advfirewall firewall add rule name=\"chrome1\" program=\"C:\Program Files\Google\Chrome\Application\chrome.exe\" dir=out action=allow & netsh advfirewall firewall add rule name=\"chrome2\" program=\"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe\" dir=out action=allow'"'''
 APPLY_WHITE_LIST='''regedit URLWhitelist.reg'''
 def execute(command):
     os.system(command)
