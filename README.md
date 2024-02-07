@@ -7,7 +7,7 @@ download the source from the [release page](https://github.com/koshernet/koshern
 
 # make exe app from the source py file.
 
-install python3
+install [python3](https://www.python.org/downloads/)
 
 run on cmd
 
