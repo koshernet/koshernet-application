@@ -3,6 +3,8 @@ Application for quickly koshering the network by blocking and filtering.
 
 ---
 
+download the source from the [release page](https://github.com/koshernet/koshernet-application/releases/tag/koshernet-application)
+
 # make exe app from the source py file.
 
 install python3
