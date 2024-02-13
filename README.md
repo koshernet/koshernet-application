@@ -15,4 +15,4 @@ run on cmd
 
 then use it to make it exe by this command
 
-```pyinstaller --onefile -noconsole koshernet_maneger.py```
+```pyinstaller --onefile --noconsole koshernet_maneger.py```
