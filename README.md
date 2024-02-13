@@ -16,3 +16,5 @@ run on cmd
 then use it to make it exe by this command
 
 ```pyinstaller --onefile --noconsole koshernet_maneger.py```
+
+then copy the .reg files to dist
